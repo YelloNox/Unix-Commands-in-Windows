@@ -1,0 +1,34 @@
+ls                          User Manuals                          ls
+
+NAME
+        ls - Explore commands from in a command-line environment.
+
+SYNOPSIS
+        ls
+        ls [option]
+
+DESCRIPTION
+        List information about the FILEs (the current directory only).
+
+OPTIONS
+        -a
+                Display hidden files and folders in addition to the
+                regular ones.
+
+        -q
+                A faster way to view files and folders. Not formatted.
+
+        -qa
+                Similar to -q, but includes hidden files and folders.
+    
+        -w 
+                Similar to -q, but is formatted in as windows default.
+
+        -wa 
+                Similar to -o, but includes hidden files and folders.
+
+AUTHOR
+        https://github.com/YelloNolo/.
+
+SEE ALSO
+        UCIW - For more information on the Unix Commands in Windows

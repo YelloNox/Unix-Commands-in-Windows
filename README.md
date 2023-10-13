@@ -23,4 +23,4 @@ You can find the clink directory with the ```clink info``` command
 
 Clink will add the ```history``` command to your terminal.
 
-<sub><sub>Making Windows Great Again!!!</sub></sub>
+<sub><sub>Making Windows Great Again</sub></sub>

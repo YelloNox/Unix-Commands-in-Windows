@@ -1,0 +1,16 @@
+OPTIONS
+        -a
+                Display hidden files and folders in addition to the
+                regular ones.
+
+        -q
+                A faster way to view files and folders. Not formatted.
+
+        -qa
+                Similar to -q, but includes hidden files and folders.
+
+        -w 
+                Similar to -q, but is formatted in as windows default.
+
+        -wa 
+                Similar to -o, but includes hidden files and folders.
