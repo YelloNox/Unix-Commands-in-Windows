@@ -1,1 +1,2 @@
-test
+INFO
+        Run 'UCIW' for more informaiton

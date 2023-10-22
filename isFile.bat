@@ -5,14 +5,17 @@ setlocal enabledelayedexpansion
 
 set foundFile=
 
+if "%1"=="" (
+    echo Usage: %0 [file]
+    exit /b
+)
+
 for /r %%i in (*) do (
-        if "%%~nxi"=="%*" (
+    if "%%~nxi"=="%*" (
         set foundFile=%%i
-        goto :found
     )
 )
 
-:found
 if defined foundFile (
     echo 1
 ) else (
@@ -20,3 +23,4 @@ if defined foundFile (
 )
 
 endlocal
+exit /b

@@ -1,27 +1,32 @@
 @echo off
-setlocal enabledelayedexpansion
-set filename=%*
+setlocal
 
-:: Create temporary file
-set tempfile=%temp%\tempmanfile.txt
-
-:: Output the command to temp file
-:: This is to stop windows error messages
-where "%filename%" > "%tempfile%" 2>&1
-
-if %errorlevel%==0 (
-    for /f "delims=" %%i in ('type "%tempfile%"') do (
-        echo.
-        cat "%%i.man"
-        echo.
-    )
+if "%1"=="" (
+    echo Usage: %0 [command]
+    exit /b
 )
 
-:: Delete temp file
-del %tempfile% 2>NUL
+set output=
+for /f "delims=" %%i in ('isCommand %1') do (set "output=%%i")
 
-if not defined found (
-    echo The command "%*" was not found.
+if %output%==0 (
+    echo.
+    echo The command "%*" was not found 
+    echo OR is NOT a part of UCIW.
+    exit /b
 )
+
+set "command=%1"
+set "manfile=%~dp0%command%.bat.man"
+
+if not exist "%manfile%" (
+    echo No .man file for "%command%"
+    exit /b
+)
+
+
+type "%manfile%"
+echo.
 
 endlocal
+exit /b

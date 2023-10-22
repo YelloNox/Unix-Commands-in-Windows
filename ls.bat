@@ -1,58 +1,31 @@
 @echo off
-setlocal enabledelayedexpansion
+setlocal
 
-set looping=0
-set input=%1
-set ecoInput=
+set "opt_a=0"
+set "opt_q=0"
+set "targetDir=."
 
-:loop
-
-:: Check user input for variable
-
-if "%input%" == "" (
-    getdir
-    powershell "Get-ChildItem | Format-Table -Property Mode, LastWriteTime, Length, Name -AutoSize"
-    goto endloop
-) else if "%input%" == "a" (
-    getdir
-    powershell "Get-ChildItem -Force | Format-Table -Property Mode, LastWriteTime, Length, Name -AutoSize"
-    goto endloop
-) else if "%input%" == "q" (
-    getdir
-    echo.
-    dir /B
-    goto endloop
-) else if "%input%" == "qa" (
-    getdir
-    echo.
-    dir /a /B
-    goto endloop
-) else if "%input%" == "w" (
-    dir
-    goto endloop
-) else if "%input%" == "wa" (
-    dir /a
-    goto endloop
-) else if "%input%" == "h" (
-    uciw-help ls
+:: Check each argument for options and possible target directory
+for %%i in (%*) do (
+    if "%%i"=="-h" (
+        uciw-help ls
+    )
+    if "%%i"=="-a" set "opt_a=1"
+    if "%%i"=="-q" set "opt_q=1"
+    if not "%%i"=="-a" if not "%%i"=="-q" if not "%%i"=="-h" set "targetDir=%%i"
 )
 
-:: is variable false? Check to see if it is uppercase or out of ecosystem, then convert
-if %looping% == 0 (
-    :: Convert to lower case
-    for /f "delims=" %%a in ('lowercase %input%') do set input=%%a
-    set looping=1
-    goto loop
-) else if %looping% == 1 (
-    :: Convert to ecosystem
-    for /f "delims=" %%a in ('convertToEcosystem %input%') do set input=%%a
-    set looping=2
-    goto loop
+:: Execute commands based on options and target directory
+if "%opt_q%"=="1" (
+    if "%opt_a%"=="1" (
+        dir /a "%targetDir%"
+    ) else (
+        dir "%targetDir%"
+    )
+) else if "%opt_a%"=="1" (
+    powershell "Get-ChildItem -Force '%targetDir%' | Format-Table -Property Mode, LastWriteTime, Length, Name -AutoSize"
 ) else (
-    :: Nope, it was just bad input
-    echo Invalid Input: %* 
-    goto endloop
+    powershell "Get-ChildItem '%targetDir%' | Format-Table -Property Mode, LastWriteTime, Length, Name -AutoSize"
 )
 
-:endloop
 endlocal

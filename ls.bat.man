@@ -1,4 +1,6 @@
-ls                          User Manuals                          ls
+-----------------------------------------------------------------
+                            User Manual                          
+-----------------------------------------------------------------
 
 NAME
         ls - Explore commands from in a command-line environment.
@@ -7,8 +9,11 @@ SYNOPSIS
         ls
         ls [option]
 
+EXAMPLE
+        ls -a -q
+
 DESCRIPTION
-        List information about the FILEs (the current directory only).
+        List files and folders in selected directory.
 
 OPTIONS
         -a
@@ -17,15 +22,6 @@ OPTIONS
 
         -q
                 A faster way to view files and folders. Not formatted.
-
-        -qa
-                Similar to -q, but includes hidden files and folders.
-    
-        -w 
-                Similar to -q, but is formatted in as windows default.
-
-        -wa 
-                Similar to -o, but includes hidden files and folders.
 
 AUTHOR
         https://github.com/YelloNolo/.

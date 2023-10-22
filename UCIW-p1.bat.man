@@ -1,0 +1,7 @@
+-----------------------------------------------------------------
+                  UNIX-COMMANDS-IN-WINDOWS (UCIW)                          
+-----------------------------------------------------------------
+
+DESCRIPTION
+        This repo contains a collection of custom Windows commands to
+        mimic a unix environment.

@@ -1,2 +1,3 @@
 @echo off
-@cd  
+echo.
+@cd

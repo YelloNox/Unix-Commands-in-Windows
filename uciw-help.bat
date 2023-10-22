@@ -11,7 +11,6 @@ where "%filename%" > "%tempfile%" 2>&1
 
 if %errorlevel%==0 (
     for /f "delims=" %%i in ('type "%tempfile%"') do (
-        echo.
         cat "%%i.help"
         echo.
     )
