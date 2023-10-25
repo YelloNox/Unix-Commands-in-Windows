@@ -7,7 +7,7 @@ NAME
 
 SYNOPSIS
         ls
-        ls [option]
+        ls <OPTIONS>
 
 EXAMPLE
         ls -a -q

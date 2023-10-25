@@ -1,1 +1,5 @@
-grep [PATTERN] [FILE]
+grep <OPTIONS> [PATTERN] [FILE/DIR]
+
+OPTIONS
+        -c
+                Display a total count of items found.

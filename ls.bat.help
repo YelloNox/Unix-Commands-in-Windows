@@ -1,3 +1,5 @@
+ls <OPTIONS>
+
 OPTIONS
         -a
                 Display hidden files and folders in addition to the
