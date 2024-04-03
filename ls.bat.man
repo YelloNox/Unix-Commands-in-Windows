@@ -24,7 +24,7 @@ OPTIONS
                 A faster way to view files and folders. Not formatted.
 
 AUTHOR
-        https://github.com/YelloNolo/.
+        https://github.com/YelloNox/.
 
 SEE ALSO
         UCIW - For more information on the Unix Commands in Windows

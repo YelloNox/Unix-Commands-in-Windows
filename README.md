@@ -16,13 +16,7 @@ Add this folder to the Windows Path:
 ## Other notes
 I reccommend installing **oh-my-posh** and **clink** for a better experience.
 
-My personal "oh-my-posh.lua" config if you want. Place it in the clink directory: 
-
-```
-load(io.popen('oh-my-posh init cmd --config C:/Users/Alecm/AppData/Local/Programs/oh-my-posh/themes/catppuccin_frappe.omp.json'):read("*a"))()
-```
-
-You can find the clink directory with the ```clink info``` command
+My personal "oh-my-posh.lua" can be found here: https://github.com/YelloNox/oh-my-posh-config
 
 Clink will add the ```history``` command to your terminal.
 
